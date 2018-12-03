@@ -2,7 +2,7 @@ import * as constants from './constants';
 import { differenceBy } from 'lodash/array';
 
 const initialState = {
-    timeSeries: JSON.parse(localStorage.getItem('timeSeries'))
+    timeSeries: JSON.parse(localStorage.getItem('timeSeries')) || []
 };
 
 const rootReducer =(state = initialState, action) => {

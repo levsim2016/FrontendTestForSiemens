@@ -1,0 +1,12 @@
+.graph{
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+
+    @import 'graphCanvas.scss';
+    @import 'dataEditor.scss';
+
+    .graphCanvas + .dataEditor{
+        margin-left: 10px;
+    }
+}

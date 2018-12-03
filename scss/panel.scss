@@ -1,0 +1,23 @@
+.panel{
+    width: 200px;
+    height: inherit;
+    background-color: #eaeaea;
+    transition: width 0.5s ease-in; 
+}
+
+.opened{
+    width: 200px;
+}
+
+.closed{
+    width: 0;
+    box-shadow: none;
+}
+
+.left{
+    box-shadow: 2px 0px 47px -5px rgba(0,0,0,0.75);
+}
+
+.right{
+    box-shadow: -2px 0px 47px -5px rgba(0,0,0,0.75);
+}
