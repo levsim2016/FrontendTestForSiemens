@@ -1,28 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, compose, applyMiddleware } from 'redux';
-import { createBrowserHistory } from 'history';
-import { routerMiddleware } from 'connected-react-router';
+import { createStore } from 'redux';
 
-import createRootReducer from './reducers';
-import App from './components/App';
+import rootReducer from './reducers';
 
-
-const history = createBrowserHistory();
-const store = createStore(
-    createRootReducer(history),
-    window.__INITIAL_STATE__,
-    compose(
-        applyMiddleware(
-            routerMiddleware(history)
-        )
-    )
-);
+const initialState = {
+    timeSeries: JSON.parse(localStorage.getItem('timeSeries'))
+};
+const store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App history={history}/>
+        <App/>
     </Provider>, 
     document.getElementById('app')
 );
