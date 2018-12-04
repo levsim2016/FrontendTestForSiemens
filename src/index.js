@@ -6,8 +6,10 @@ import { createStore } from 'redux';
 import App from './components/App';
 import rootReducer from './reducers';
 
+localStorage.setItem('timeSeries',localStorage.getItem('timeSeries') || '[]');
+console.log(localStorage.getItem('timeSeries'));
 const initialState = {
-    timeSeries: JSON.parse(localStorage.getItem('timeSeries')) || []
+    timeSeries: JSON.parse(localStorage.getItem('timeSeries'))
 };
 const store = createStore(rootReducer, initialState);
 

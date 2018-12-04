@@ -1,6 +1,48 @@
 .dataEditor{
     width: 228px;
-    height: 100%;
     padding: 5px;
     border: 1px solid #444444;
+
+    .addTimeSeriesForm{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+
+        label, .numberInput{
+            width: 100%;
+        }
+
+        .numberInput{
+            height: 18px;
+        }
+    }
+
+    .valueList{
+        margin: 0;
+        padding: 0;        
+        list-style-type: none;
+
+        .valueItem{
+            display: flex;
+            align-items: center;
+            height: 24px;
+            padding: 2px;
+            border: 1px solid #bbb;
+
+            .timeLabel{
+                margin-left: 4px;
+                color: #bbb;
+            }
+
+            .valueLabel{
+                margin-left: 10px;
+            }
+            
+            .removeButton{
+                height: 100%;
+                border: inherit;
+                margin-left: auto;
+            }
+        }
+    }
 }

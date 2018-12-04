@@ -5,7 +5,7 @@ export default class Panel extends Component{
         super(props);
         this.props = props;
         this.state = {
-            isPanelExpanded: true
+            isPanelExpanded: false
         };
         this.generateClassString = this.generateClassString.bind(this);
     }

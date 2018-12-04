@@ -7,15 +7,11 @@ export default class App extends PureComponent{
         return (
             <div className='appContainer'>
                 <Panel left>
-                    <div>   
-                        dfsd
-                    </div>
+                    <img src='images/panelArrow.svg'/>
                 </Panel>
                 <Graph/>
                 <Panel right>
-                    <div>
-                        dsfdsf
-                    </div>
+                    <img src='images/panelArrow.svg'/>
                 </Panel>
             </div>
         );

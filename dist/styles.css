@@ -1,1 +1,74 @@
-body{margin:0;padding:0}.appContainer{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:space-evenly;-webkit-justify-content:space-evenly;-moz-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly;width:100%;height:100%;position:fixed}.appContainer .graph{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-webkit-flex-grow:1;-moz-box-flex:1;-ms-flex-positive:1;flex-grow:1;padding:10px}.appContainer .graph .graphCanvas{-webkit-box-flex:1;-webkit-flex-grow:1;-moz-box-flex:1;-ms-flex-positive:1;flex-grow:1;height:100%;border:1px solid #444444}.appContainer .graph .dataEditor{width:228px;height:100%;padding:5px;border:1px solid #444444}.appContainer .graph .graphCanvas+.dataEditor{margin-left:10px}.appContainer .panel{width:200px;height:inherit;background-color:#eaeaea;-webkit-transition:width 0.5s ease-in;-o-transition:width 0.5s ease-in;-moz-transition:width 0.5s ease-in;transition:width 0.5s ease-in}.appContainer .opened{width:200px}.appContainer .closed{width:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.appContainer .left{-webkit-box-shadow:2px 0px 47px -5px rgba(0,0,0,0.75);-moz-box-shadow:2px 0px 47px -5px rgba(0,0,0,0.75);box-shadow:2px 0px 47px -5px rgba(0,0,0,0.75)}.appContainer .right{-webkit-box-shadow:-2px 0px 47px -5px rgba(0,0,0,0.75);-moz-box-shadow:-2px 0px 47px -5px rgba(0,0,0,0.75);box-shadow:-2px 0px 47px -5px rgba(0,0,0,0.75)}
+body {
+  margin: 0;
+  padding: 0; }
+
+.appContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  position: fixed; }
+  .appContainer .graph {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px; }
+    .appContainer .graph .graphCanvas {
+      flex-grow: 1;
+      border: 1px solid #444444; }
+    .appContainer .graph .dataEditor {
+      width: 228px;
+      padding: 5px;
+      border: 1px solid #444444; }
+      .appContainer .graph .dataEditor .addTimeSeriesForm {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 18px; }
+        .appContainer .graph .dataEditor .addTimeSeriesForm label, .appContainer .graph .dataEditor .addTimeSeriesForm .numberInput {
+          width: 100%; }
+        .appContainer .graph .dataEditor .addTimeSeriesForm .numberInput {
+          height: 18px; }
+      .appContainer .graph .dataEditor .valueList {
+        margin: 0;
+        padding: 0;
+        list-style-type: none; }
+        .appContainer .graph .dataEditor .valueList .valueItem {
+          display: flex;
+          align-items: center;
+          height: 24px;
+          padding: 2px;
+          border: 1px solid #bbb; }
+          .appContainer .graph .dataEditor .valueList .valueItem .timeLabel {
+            margin-left: 4px;
+            color: #bbb; }
+          .appContainer .graph .dataEditor .valueList .valueItem .valueLabel {
+            margin-left: 10px; }
+          .appContainer .graph .dataEditor .valueList .valueItem .removeButton {
+            height: 100%;
+            border: inherit;
+            margin-left: auto; }
+    .appContainer .graph .graphCanvas + .dataEditor {
+      margin-left: 10px; }
+  .appContainer .panel {
+    width: 200px;
+    height: inherit;
+    background-color: #eaeaea;
+    transition: width 0.5s ease-in;
+    position: relative; }
+    .appContainer .panel img {
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute; }
+  .appContainer .opened {
+    width: 200px; }
+  .appContainer .closed {
+    width: 0;
+    box-shadow: none; }
+  .appContainer .left {
+    box-shadow: 2px 0px 47px -5px rgba(0, 0, 0, 0.75); }
+  .appContainer .right {
+    box-shadow: -2px 0px 47px -5px rgba(0, 0, 0, 0.75); }
+    .appContainer .right img {
+      left: 0;
+      right: 100%;
+      transform: scaleX(-1) translateX(100%) translateY(-50%); }

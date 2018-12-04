@@ -3,6 +3,14 @@
     height: inherit;
     background-color: #eaeaea;
     transition: width 0.5s ease-in; 
+    position: relative;
+
+    img{
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+    }
 }
 
 .opened{
@@ -20,4 +28,10 @@
 
 .right{
     box-shadow: -2px 0px 47px -5px rgba(0,0,0,0.75);
+
+    img{
+        left: 0;
+        right: 100%;
+        transform: scaleX(-1) translateX(100%) translateY(-50%);
+    }
 }
