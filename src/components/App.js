@@ -11,7 +11,7 @@ export default class App extends PureComponent{
                 </Panel>
                 <Graph/>
                 <Panel right>
-                    <img src='images/panelArrow.svg'/>
+                    
                 </Panel>
             </div>
         );

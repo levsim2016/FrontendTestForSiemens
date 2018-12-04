@@ -18,10 +18,15 @@ body {
       .appContainer .graph .graphCanvas svg {
         width: 100%;
         height: 100%; }
+        .appContainer .graph .graphCanvas svg path {
+          display: flex; }
     .appContainer .graph .dataEditor {
+      min-width: 228px;
       width: 228px;
+      height: calc(100% - 11px);
       padding: 5px;
-      border: 1px solid #444444; }
+      border: 1px solid #444444;
+      overflow-y: auto; }
       .appContainer .graph .dataEditor .addTimeSeriesForm {
         display: flex;
         flex-wrap: wrap;
@@ -31,14 +36,9 @@ body {
         .appContainer .graph .dataEditor .addTimeSeriesForm .numberInput {
           height: 18px; }
       .appContainer .graph .dataEditor .valueList {
-        display: flex;
         margin: 0;
         padding: 0;
-        list-style-type: none;
-        flex: 1 1 auto;
-        overflow-y: auto;
-        flex-direction: column;
-        height: 300px; }
+        list-style-type: none; }
         .appContainer .graph .dataEditor .valueList .valueItem {
           display: flex;
           align-items: center;
@@ -60,15 +60,20 @@ body {
     width: 200px;
     height: inherit;
     background-color: #eaeaea;
-    transition: width 0.5s ease-in;
+    transition: width 0.3s ease-out;
     position: relative; }
-    .appContainer .panel img {
+    .appContainer .panel a {
+      display: block;
       left: 100%;
       top: 50%;
       transform: translateY(-50%);
       position: absolute; }
   .appContainer .opened {
     width: 200px; }
+  .appContainer .opened[class*="left"] a {
+    transform: scaleX(-1) translateX(100%) translateY(-50%); }
+  .appContainer .opened[class*="right"] a {
+    transform: scaleY(-1) translateY(50%); }
   .appContainer .closed {
     width: 0;
     box-shadow: none; }
@@ -76,7 +81,7 @@ body {
     box-shadow: 2px 0px 47px -5px rgba(0, 0, 0, 0.75); }
   .appContainer .right {
     box-shadow: -2px 0px 47px -5px rgba(0, 0, 0, 0.75); }
-    .appContainer .right img {
+    .appContainer .right a {
       left: 0;
       right: 100%;
       transform: scaleX(-1) translateX(100%) translateY(-50%); }

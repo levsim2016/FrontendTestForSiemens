@@ -47,18 +47,17 @@ class ConnectedGraphCanvas extends PureComponent{
             const minValue = minBy(timeSeries, 'value').value;
             const maxValue = maxBy(timeSeries, 'value').value;
             const start = moment(timeSeries[0].time).unix();
-            const end = moment(timeSeries[size - 1].time).add(2, 'm').unix();
+            const end = moment(timeSeries[size - 1].time).add(1, 'm').unix();
             //const seconds = [ 0, end - start ];
             const x = scaleLinear()
                 .domain([ 1, end - start ])
-                .range([20, svgWidth - 20]);
+                .range([20, svgWidth]);
 
             const y = scaleLinear()
                 .domain([ minValue, maxValue ])
                 .rangeRound([svgHeight - 10, 10]);
             const lineObj = line()
                 .x(data => {
-                    console.log(moment(data.time).seconds());
                     return x(moment(data.time).unix() - start);
                 })
                 .y(data => y(data.value));

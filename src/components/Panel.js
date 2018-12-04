@@ -31,7 +31,13 @@ export default class Panel extends Component{
     render(){
         return (
             <div className={this.generateClassString()}>
-                { this.props.children }
+                <a href='' onClick={e => {
+                    e.preventDefault();
+                    setTimeout(() => window.dispatchEvent(new Event('resize')), 200);
+                    this.setState({ isPanelExpanded: !this.state.isPanelExpanded });
+                }}>
+                    <img src='images/panelArrow.svg'/>
+                </a>
             </div>
         );
     }

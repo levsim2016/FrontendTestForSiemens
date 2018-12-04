@@ -2,10 +2,11 @@
     width: 200px;
     height: inherit;
     background-color: #eaeaea;
-    transition: width 0.5s ease-in; 
+    transition: width 0.3s ease-out; 
     position: relative;
 
-    img{
+    a{
+        display: block;
         left: 100%;
         top: 50%;
         transform: translateY(-50%);
@@ -15,6 +16,18 @@
 
 .opened{
     width: 200px;
+}
+
+.opened[class*="left"]{
+    a{
+        transform:  scaleX(-1) translateX(100%) translateY(-50%);
+    }
+}
+
+.opened[class*="right"]{
+    a{
+        transform:  scaleY(-1) translateY(50%);
+    }
 }
 
 .closed{
@@ -29,7 +42,7 @@
 .right{
     box-shadow: -2px 0px 47px -5px rgba(0,0,0,0.75);
 
-    img{
+    a{
         left: 0;
         right: 100%;
         transform: scaleX(-1) translateX(100%) translateY(-50%);
