@@ -15,6 +15,9 @@ body {
     .appContainer .graph .graphCanvas {
       flex-grow: 1;
       border: 1px solid #444444; }
+      .appContainer .graph .graphCanvas svg {
+        width: 100%;
+        height: 100%; }
     .appContainer .graph .dataEditor {
       width: 228px;
       padding: 5px;
@@ -28,9 +31,14 @@ body {
         .appContainer .graph .dataEditor .addTimeSeriesForm .numberInput {
           height: 18px; }
       .appContainer .graph .dataEditor .valueList {
+        display: flex;
         margin: 0;
         padding: 0;
-        list-style-type: none; }
+        list-style-type: none;
+        flex: 1 1 auto;
+        overflow-y: auto;
+        flex-direction: column;
+        height: 300px; }
         .appContainer .graph .dataEditor .valueList .valueItem {
           display: flex;
           align-items: center;
