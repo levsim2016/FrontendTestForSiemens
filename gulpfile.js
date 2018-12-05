@@ -1,3 +1,7 @@
+/*
+    В продакшене минифицирует js код. Использую BundleAnalyzer для анализа веса бандла
+    Autoprefixer для вендорных префиксов свойств css
+*/
 const path = require('path');
 
 const { src, dest, watch } = require('gulp');
@@ -7,7 +11,10 @@ const nodeSass = require('node-sass');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 sass.compiler = nodeSass;
 
@@ -29,7 +36,7 @@ function prefixCss(){
 
 function transpileJS(){
     return src('src/index.js')  
-    .pipe(webpack({
+    .pipe(webpackStream({
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: 'bundle.js'
@@ -50,6 +57,10 @@ function transpileJS(){
                 },
             ],
         },
+        plugins: [
+            new BundleAnalyzerPlugin(),
+            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+        ]
     }))
     .pipe(concat('bundle.js'))
     .pipe(dest('dist'));

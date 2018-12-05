@@ -4,12 +4,14 @@ import moment from 'moment';
 
 import { addTimeSeries, deleteTimeSeries } from '../actions';
 
+//ссылаемся на список значений в хранилище
 const mapStateToProps = state => {
     return {
         timeSeries: state.timeSeries
     };
 };
 
+//привязываем redux actions к компоненту редактора
 const mapDispatchToProps = dispatch => {
     return{
         add: (time, value) => dispatch(addTimeSeries(time, value)),
@@ -26,6 +28,7 @@ class ConnectedDataEditor extends Component{
         this.deleteTimeSeries = this.deleteTimeSeries.bind(this);
     }
 
+    //добавляем значение с текущим временем
     addTimeSeries(e){
         e.preventDefault();
         
@@ -35,13 +38,13 @@ class ConnectedDataEditor extends Component{
         e.target.reset();
     }
 
+    //вызов функции для удаления значения по времени
     deleteTimeSeries(time){
         this.props.delete(time);
     }
 
     render(){
         const { timeSeries } = this.props;
-        console.log(timeSeries);
         return (
             <div className='dataEditor'>
                 <form onSubmit={this.addTimeSeries} className='addTimeSeriesForm'>

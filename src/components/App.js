@@ -6,13 +6,9 @@ export default class App extends PureComponent{
     render(){
         return (
             <div className='appContainer'>
-                <Panel left>
-                    <img src='images/panelArrow.svg'/>
-                </Panel>
+                <Panel left/>
                 <Graph/>
-                <Panel right>
-                    
-                </Panel>
+                <Panel right/>
             </div>
         );
     }
